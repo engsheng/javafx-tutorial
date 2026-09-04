@@ -86,12 +86,12 @@ public class Main extends Application {
      * Creates a dialog box containing user input, and appends it to
      * the dialog container. Clears the user input after processing.
      */
-   private void handleUserInput() {
+    private void handleUserInput() {
         String userText = userInput.getText();
         String dukeText = duke.getResponse(userInput.getText());
         dialogContainer.getChildren().addAll(
-                new DialogBox(userText, userImage),
-                new DialogBox(dukeText, dukeImage)
+                DialogBox.getUserDialog(userText, userImage),
+                DialogBox.getDukeDialog(dukeText, dukeImage)
         );
         userInput.clear();
     }
